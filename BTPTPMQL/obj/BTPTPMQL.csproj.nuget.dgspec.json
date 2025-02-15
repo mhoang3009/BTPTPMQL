@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj": {}
+    "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj": {}
   },
   "projects": {
-    "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj": {
+    "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
+        "projectUniqueName": "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
         "projectName": "BTPTPMQL",
-        "projectPath": "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
+        "projectPath": "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
         "packagesPath": "C:\\Users\\iamgh\\.nuget\\packages\\",
-        "outputPath": "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\obj\\",
+        "outputPath": "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\iamgh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -32,7 +32,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net7.0": {
@@ -56,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
