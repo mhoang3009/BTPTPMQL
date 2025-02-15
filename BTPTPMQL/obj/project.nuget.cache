@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5ImY3UkS0u4=",
+  "dgSpecHash": "p1DXYVRwy3w=",
   "success": true,
   "projectFilePath": "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\iamgh\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\9.0.2\\microsoft.entityframeworkcore.tools.9.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -4,11 +4,11 @@ using BTPTPMQL.Models;
 
 namespace BTPTPMQL.Controllers
 {
-    public class EmployeeController : Controller
+    public class DaiLyController : Controller
     {
-        private readonly ILogger<EmployeeController> _logger;
+        private readonly ILogger<DaiLyController> _logger;
 
-        public EmployeeController(ILogger<EmployeeController> logger)
+        public DaiLyController(ILogger<DaiLyController> logger)
         {
             _logger = logger;
         }
@@ -17,7 +17,13 @@ namespace BTPTPMQL.Controllers
         {
             return View();
         }
-
+        [HttpPost]
+        public IActionResult Index(DaiLy dl)
+        {
+            string strOutput = "Mã đại lý " + dl.MaDaiLy + " Tên Đại Lý: " + dl.TenDaiLy + " Địa chỉ: " + dl.DiaChi + " Điện thoại: " + dl.DienThoai + " Người đại diện: " + dl.NguoiDaiDien + " Mã hệ thống phân phối: " + dl.MaHTPp;
+            ViewBag.message = strOutput;
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
