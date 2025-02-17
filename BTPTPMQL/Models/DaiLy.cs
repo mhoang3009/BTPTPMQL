@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
 
 namespace BTPTPMQL.Models
 {
@@ -9,6 +10,6 @@ namespace BTPTPMQL.Models
         public string? DiaChi { get; set; }
         public string? DienThoai { get; set; }
         public string? NguoiDaiDien { get; set; }
-        public string? MaHTPp { get; set; }
     }
+    
 }

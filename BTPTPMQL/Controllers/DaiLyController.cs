@@ -20,7 +20,7 @@ namespace BTPTPMQL.Controllers
         [HttpPost]
         public IActionResult Index(DaiLy dl)
         {
-            string strOutput = "Mã đại lý " + dl.MaDaiLy + " Tên Đại Lý: " + dl.TenDaiLy + " Địa chỉ: " + dl.DiaChi + " Điện thoại: " + dl.DienThoai + " Người đại diện: " + dl.NguoiDaiDien + " Mã hệ thống phân phối: " + dl.MaHTPp;
+            string strOutput = "Mã đại lý " + dl.MaDaiLy + " Tên Đại Lý: " + dl.TenDaiLy + " Địa chỉ: " + dl.DiaChi + " Điện thoại: " + dl.DienThoai + " Người đại diện: " + dl.NguoiDaiDien + " Mã hệ thống phân phối: " + dl.MaHTPP;
             ViewBag.message = strOutput;
             return View();
         }
