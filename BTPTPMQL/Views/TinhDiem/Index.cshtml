@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Tính BMI";
+}
+<form asp-action="index">
+    <label>Nhập điểm A</label>
+    <input type="number" name="DiemA"/>
+    <br />
+    <label>Nhập điểm B</label>
+    <input type="number" name="DiemB"/>
+    <br />
+    <label>Nhập điểm C</label>
+    <input type="number" name="DiemC"/>
+    <br />
+    <button type="submit">Tính điểm</button>
+</form>
+<h1>@ViewBag.Point</h1>
