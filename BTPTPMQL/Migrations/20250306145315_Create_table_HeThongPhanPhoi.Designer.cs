@@ -10,18 +10,31 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BTPTPMQL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250216081504_Create_table_Person")]
-    partial class CreatetablePerson
+    [Migration("20250306145315_Create_table_HeThongPhanPhoi")]
+    partial class Create_table_HeThongPhanPhoi
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
+            modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
+
+            modelBuilder.Entity("BTPTPMQL.Models.HeThongPhanPhoi", b =>
+                {
+                    b.Property<string>("MaHTPP")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TenHTPP")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("MaHTPP");
+
+                    b.ToTable("HeThongPhanPhoi");
+                });
 
             modelBuilder.Entity("BTPTPMQL.Models.Person", b =>
                 {
-                    b.Property<string>("PersonID")
+                    b.Property<string>("PersonId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Address")
@@ -30,7 +43,7 @@ namespace BTPTPMQL.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("PersonID");
+                    b.HasKey("PersonId");
 
                     b.ToTable("Person");
                 });
