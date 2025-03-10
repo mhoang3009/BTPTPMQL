@@ -32,8 +32,40 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQk1JXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Index.cshtml]

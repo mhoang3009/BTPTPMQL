@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BTPTPMQL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb52f80835c62c54fa260dbd4c6c270a8a575c5a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e33ab766f076b74a79ba0a7708ed5949ee151cd0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BTPTPMQL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BTPTPMQL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -21,12 +21,21 @@ namespace BTPTPMQL.Migrations
                     b.Property<string>("MaHTPP")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("TenHTPP")
                         .HasColumnType("TEXT");
 
                     b.HasKey("MaHTPP");
 
                     b.ToTable("HeThongPhanPhoi");
+
+                    b.HasDiscriminator().HasValue("HeThongPhanPhoi");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("BTPTPMQL.Models.Person", b =>
@@ -37,12 +46,60 @@ namespace BTPTPMQL.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("FullName")
                         .HasColumnType("TEXT");
 
                     b.HasKey("PersonId");
 
                     b.ToTable("Person");
+
+                    b.HasDiscriminator().HasValue("Person");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("BTPTPMQL.Models.DaiLy", b =>
+                {
+                    b.HasBaseType("BTPTPMQL.Models.HeThongPhanPhoi");
+
+                    b.Property<string>("DiaChi")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DienThoai")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("MaDaiLy")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NguoiDaiDien")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TenDaiLy")
+                        .HasColumnType("TEXT");
+
+                    b.ToTable("HeThongPhanPhoi");
+
+                    b.HasDiscriminator().HasValue("DaiLy");
+                });
+
+            modelBuilder.Entity("BTPTPMQL.Models.Employee", b =>
+                {
+                    b.HasBaseType("BTPTPMQL.Models.Person");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.ToTable("Person");
+
+                    b.HasDiscriminator().HasValue("Employee");
                 });
 #pragma warning restore 612, 618
         }
