@@ -1,14 +1,19 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using BTPTPMQL.Models.Process;
 using BTPTPMQL.Models;
 using BTPTPMQL.Data;
 using Microsoft.EntityFrameworkCore;
+
+using System.IO;
 
 namespace BTPTPMQL.Controllers
 {
     public class PersonController : Controller
     {
         private readonly ApplicationDbContext _context;
+
+        private ExcelProcess _excelProcess = new ExcelProcess();
 
         public PersonController(ApplicationDbContext context)
         {
@@ -115,6 +120,68 @@ namespace BTPTPMQL.Controllers
 
         }
         
+        public async Task<IActionResult> Upload()
+        {
+             var ps = await _context.Person.ToListAsync();
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if (file!= null)
+            {
+                string fileExtension = Path.GetExtension(file.FileName);
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                {
+                    ModelState.AddModelError("","Please choose an excel file to upload!");
+                }
+                else 
+                {
+                    //remame file when upload to server
+                    var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Upload/Excel", fileName);
+                    var fileLocation = new FileInfo(filePath).ToString();
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        //save file to server
+                        await file.CopyToAsync(stream);
+                        // read data from excel file fill DataTable
+                        var excelProcess = new ExcelProcess();
+                        var dt = _excelProcess.ExcelToDataTable(filePath);
+                        //using for loop to read data from dt
+                        for (int i = 0; i < dt.Rows.Count; i++)
+{
+    // Tạo đối tượng mới từ Excel
+    var ps = new Person
+    {
+        PersonId = dt.Rows[i][0].ToString(),
+        FullName = dt.Rows[i][1].ToString(),
+        Address = dt.Rows[i][2].ToString()
+    };
+
+    // Kiểm tra xem PersonId đã tồn tại trong database chưa
+    var existingPerson = await _context.Person.FindAsync(ps.PersonId);
+    if (existingPerson == null) 
+    {
+        _context.Add(ps); // Thêm mới nếu chưa tồn tại
+    }
+    else
+    {
+        // Cập nhật thông tin nếu đã tồn tại
+        existingPerson.FullName = ps.FullName;
+        existingPerson.Address = ps.Address;
+        _context.Update(existingPerson);
+    }
+}
+
+await _context.SaveChangesAsync();
+return RedirectToAction(nameof(Index));
+                    }
+                }
+            }
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -129,4 +196,6 @@ namespace BTPTPMQL.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+    
 }
+    
