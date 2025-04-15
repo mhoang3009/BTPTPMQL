@@ -17,125 +17,125 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BTPTPMQL
 build_property.RootNamespace = BTPTPMQL
-build_property.ProjectDir = D:\PTPMQL\Projecr mẫu\BTPTPMQL\BTPTPMQL\
+build_property.ProjectDir = d:\PTPMQL\Projecr mẫu\BTPTPMQL\BTPTPMQL\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\PTPMQL\Projecr mẫu\BTPTPMQL\BTPTPMQL
+build_property.MSBuildProjectDirectory = d:\PTPMQL\Projecr mẫu\BTPTPMQL\BTPTPMQL
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/BMI/index.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/BMI/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQk1JXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Create.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Delete.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Details.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Edit.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Index.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Daily/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Create.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Delete.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Details.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Edit.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Index.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Employee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HeThongPhanPhoi/Create.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HeThongPhanPhoi/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVUaG9uZ1BoYW5QaG9pXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HeThongPhanPhoi/Delete.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HeThongPhanPhoi/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVUaG9uZ1BoYW5QaG9pXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HeThongPhanPhoi/Edit.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HeThongPhanPhoi/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVUaG9uZ1BoYW5QaG9pXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HeThongPhanPhoi/Index.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HeThongPhanPhoi/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVUaG9uZ1BoYW5QaG9pXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HoaDon/Index.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/HoaDon/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9hRG9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Home/Index.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Home/Privacy.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Person/Create.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Person/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Person/Delete.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Person/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Person/Edit.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Person/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Person/Index.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Person/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Shared/Error.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Shared/_ValidationScriptsPartial.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/TinhDiem/Index.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/TinhDiem/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGluaERpZW1cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/_ViewImports.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/_ViewStart.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Shared/_Layout.cshtml]
+[d:/PTPMQL/Projecr mẫu/BTPTPMQL/BTPTPMQL/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-h6b66oujeu
