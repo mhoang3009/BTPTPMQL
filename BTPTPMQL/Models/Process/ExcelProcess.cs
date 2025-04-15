@@ -1,30 +1,33 @@
+using OfficeOpenXml;
 using System;
 using System.Data;
 using System.IO;
-using OfficeOpenXml;
 
 namespace BTPTPMQL.Models.Process
 {
-    public class ExcelProcess : Person 
+    public class ExcelProcess
     {
         public DataTable ExcelToDataTable(string filePath)
         {
-            DataTable dt = new DataTable();
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Chỉ định license để tránh lỗi
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            var dt = new DataTable();
 
             using (var package = new ExcelPackage(new FileInfo(filePath)))
             {
-                var worksheet = package.Workbook.Worksheets[0]; // Lấy sheet đầu tiên
-                int rowCount = worksheet.Dimension.Rows;
-                int colCount = worksheet.Dimension.Columns;
+                if (package.Workbook.Worksheets.Count == 0)
+                    throw new Exception("Excel file does not contain any worksheet.");
 
-                // Thêm cột từ dòng đầu tiên
+                var worksheet = package.Workbook.Worksheets[0]; // Read the first sheet
+                int colCount = worksheet.Dimension.Columns;
+                int rowCount = worksheet.Dimension.Rows;
+
+                // Add columns to DataTable using first row as header
                 for (int col = 1; col <= colCount; col++)
                 {
                     dt.Columns.Add(worksheet.Cells[1, col].Value?.ToString() ?? $"Column{col}");
                 }
 
-                // Thêm dữ liệu từ các dòng tiếp theo
+                // Add rows starting from second row
                 for (int row = 2; row <= rowCount; row++)
                 {
                     DataRow dr = dt.NewRow();
