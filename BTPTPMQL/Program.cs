@@ -1,18 +1,52 @@
-using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 using BTPTPMQL.Data;
+using BTPTPMQL.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using BTPTPMQL.Models.Process;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ApplicationDbContext>(options => 
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new
-    InvalidOperationException("Connection string 'DefaultConnection' not found.")));
-
-    
+builder.Services.AddOptions();
+var mailSettings = builder.Configuration.GetSection("MailSettings");
+builder.Services.Configure<MailSettings>(mailSettings);
+builder.Services.AddTransient<IEmailSender, SendMailService>();
 
 // Add services to the container.
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
-
-var app = builder.Build(); 
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Default Lockout settings.
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.AllowedForNewUsers = true;
+    //config password
+    options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 8;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+    //config login
+    options.SignIn.RequireConfirmedEmail = true;
+    //config user
+    options.User.RequireUniqueEmail = true;
+});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    //chi gui cookie qua https
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    //giam thieu rui ro csrf
+    options.Cookie.SameSite = SameSiteMode.Lax;
+    //thoi gian ton tai cookie
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+    options.SlidingExpiration = true;
+});
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -23,16 +57,17 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
-
 app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapStaticAssets();
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-    
+    pattern: "{controller=Home}/{action=Index}/{id?}")
+    .WithStaticAssets();
+
+app.MapRazorPages();
+
 app.Run();
-
-

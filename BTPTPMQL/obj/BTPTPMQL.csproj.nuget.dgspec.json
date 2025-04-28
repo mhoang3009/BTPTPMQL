@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj": {}
+    "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj": {}
   },
   "projects": {
-    "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj": {
+    "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
+        "projectUniqueName": "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
         "projectName": "BTPTPMQL",
-        "projectPath": "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
+        "projectPath": "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
         "packagesPath": "C:\\Users\\iamgh\\.nuget\\packages\\",
-        "outputPath": "D:\\PTPMQL\\Projecr mẫu\\BTPTPMQL\\BTPTPMQL\\obj\\",
+        "outputPath": "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\iamgh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -47,6 +47,18 @@
             "EPPlus": {
               "target": "Package",
               "version": "[7.6.1, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

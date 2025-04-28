@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("BTPTPMQL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d5a38a9015e6eebec3843b2c40d489842ed4e66")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fbbe6c19cc7b3717340e15c1d8523161227f05d")]
 [assembly: System.Reflection.AssemblyProductAttribute("BTPTPMQL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BTPTPMQL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
