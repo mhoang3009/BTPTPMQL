@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "U9tf747p/qk=",
+  "dgSpecHash": "8bQnx1rrHVM=",
   "success": true,
   "projectFilePath": "D:\\PTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL\\BTPTPMQL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iamgh\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\iamgh\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\iamgh\\.nuget\\packages\\bogus\\35.6.3\\bogus.35.6.3.nupkg.sha512",
     "C:\\Users\\iamgh\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "C:\\Users\\iamgh\\.nuget\\packages\\epplus\\7.6.1\\epplus.7.6.1.nupkg.sha512",
     "C:\\Users\\iamgh\\.nuget\\packages\\epplus.interfaces\\7.6.1\\epplus.interfaces.7.6.1.nupkg.sha512",

@@ -7,28 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BTPTPMQL.Data;
 using BTPTPMQL.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace BTPTPMQL.Controllers
 {
-    [Authorize]
-    public class EmployeeController : Controller
+    public class MemberUnitController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public EmployeeController(ApplicationDbContext context)
+        public MemberUnitController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        [AllowAnonymous]
-        // GET: Employee
+        // GET: MemberUnit
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employee.ToListAsync());
+            return View(await _context.MemberUnit.ToListAsync());
         }
 
-        // GET: Employee/Details/5
+        // GET: MemberUnit/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,40 +33,39 @@ namespace BTPTPMQL.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmployeeId == id);
-            if (employee == null)
+            var memberUnit = await _context.MemberUnit
+                .FirstOrDefaultAsync(m => m.MemberUnitId == id);
+            if (memberUnit == null)
             {
                 return NotFound();
             }
 
-            return View(employee);
+            return View(memberUnit);
         }
 
-        // GET: Employee/Create
-        [AllowAnonymous]
+        // GET: MemberUnit/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Employee/Create
+        // POST: MemberUnit/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,FirstName,LastName,Address,DateOfBirth,Position,Email,HireDate")] Employee employee)
+        public async Task<IActionResult> Create([Bind("MemberUnitId,Name,Address,PhoneNumber,WebsiteUrl")] MemberUnit memberUnit)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(employee);
+                _context.Add(memberUnit);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+            return View(memberUnit);
         }
 
-        // GET: Employee/Edit/5
+        // GET: MemberUnit/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,22 +73,22 @@ namespace BTPTPMQL.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employee.FindAsync(id);
-            if (employee == null)
+            var memberUnit = await _context.MemberUnit.FindAsync(id);
+            if (memberUnit == null)
             {
                 return NotFound();
             }
-            return View(employee);
+            return View(memberUnit);
         }
 
-        // POST: Employee/Edit/5
+        // POST: MemberUnit/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,FirstName,LastName,Address,DateOfBirth,Position,Email,HireDate")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("MemberUnitId,Name,Address,PhoneNumber,WebsiteUrl")] MemberUnit memberUnit)
         {
-            if (id != employee.EmployeeId)
+            if (id != memberUnit.MemberUnitId)
             {
                 return NotFound();
             }
@@ -101,12 +97,12 @@ namespace BTPTPMQL.Controllers
             {
                 try
                 {
-                    _context.Update(employee);
+                    _context.Update(memberUnit);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.EmployeeId))
+                    if (!MemberUnitExists(memberUnit.MemberUnitId))
                     {
                         return NotFound();
                     }
@@ -117,10 +113,10 @@ namespace BTPTPMQL.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+            return View(memberUnit);
         }
 
-        // GET: Employee/Delete/5
+        // GET: MemberUnit/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -128,34 +124,34 @@ namespace BTPTPMQL.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmployeeId == id);
-            if (employee == null)
+            var memberUnit = await _context.MemberUnit
+                .FirstOrDefaultAsync(m => m.MemberUnitId == id);
+            if (memberUnit == null)
             {
                 return NotFound();
             }
 
-            return View(employee);
+            return View(memberUnit);
         }
 
-        // POST: Employee/Delete/5
+        // POST: MemberUnit/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var employee = await _context.Employee.FindAsync(id);
-            if (employee != null)
+            var memberUnit = await _context.MemberUnit.FindAsync(id);
+            if (memberUnit != null)
             {
-                _context.Employee.Remove(employee);
+                _context.MemberUnit.Remove(memberUnit);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EmployeeExists(int id)
+        private bool MemberUnitExists(int id)
         {
-            return _context.Employee.Any(e => e.EmployeeId == id);
+            return _context.MemberUnit.Any(e => e.MemberUnitId == id);
         }
     }
 }

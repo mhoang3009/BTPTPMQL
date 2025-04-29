@@ -1184,3 +1184,4 @@ D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv2
 D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
 D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\bin\Debug\net9.0\MailKit.dll
 D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\bin\Debug\net9.0\MimeKit.dll
+D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\bin\Debug\net9.0\Bogus.dll

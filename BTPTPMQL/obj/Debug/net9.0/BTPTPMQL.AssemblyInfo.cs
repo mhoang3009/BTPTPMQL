@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BTPTPMQL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fbbe6c19cc7b3717340e15c1d8523161227f05d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3e407292b7f0935b7a1a10dbf6dfb3d023bd2c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("BTPTPMQL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BTPTPMQL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
