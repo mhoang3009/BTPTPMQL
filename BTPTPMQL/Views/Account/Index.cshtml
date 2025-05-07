@@ -1,0 +1,18 @@
+@model IEnumerable<BTPTPMQL.Models.ApplicationUser>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <body>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FullName</td>
+                <td>@user.Email</td>
+            </tr>
+        }
+    </body>
+</table>

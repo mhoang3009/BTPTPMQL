@@ -1185,3 +1185,4 @@ D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\bin\Debug\net9.0\BouncyCastle.Cryptography.
 D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\bin\Debug\net9.0\MailKit.dll
 D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\bin\Debug\net9.0\MimeKit.dll
 D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\bin\Debug\net9.0\Bogus.dll
+D:\PTPMQL\BTPTPMQL\BTPTPMQL\BTPTPMQL\bin\Debug\net9.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
