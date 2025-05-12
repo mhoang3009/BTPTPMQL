@@ -21,13 +21,13 @@ namespace BTPTPMQL.Controllers
             _context = context;
         }
 
-        [AllowAnonymous]
         // GET: Employee
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Employee.ToListAsync());
         }
-
+        [Authorize(Roles = "Employee")]
         // GET: Employee/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -45,9 +45,8 @@ namespace BTPTPMQL.Controllers
 
             return View(employee);
         }
-
+        [Authorize (Roles = "Admin")]
         // GET: Employee/Create
-        [AllowAnonymous]
         public IActionResult Create()
         {
             return View();
@@ -69,7 +68,8 @@ namespace BTPTPMQL.Controllers
             return View(employee);
         }
 
-        // GET: Employee/Edit/5
+        // GET: Employee/Edit/5\
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -121,6 +121,7 @@ namespace BTPTPMQL.Controllers
         }
 
         // GET: Employee/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

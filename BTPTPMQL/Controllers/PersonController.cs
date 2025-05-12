@@ -47,6 +47,7 @@ namespace BTPTPMQL.Controllers
         }
 
         // GET: Person/Details/5
+        [Authorize(Roles = "Employee")]
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -63,8 +64,7 @@ namespace BTPTPMQL.Controllers
 
             return View(person);
         }
-
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -81,7 +81,6 @@ namespace BTPTPMQL.Controllers
             }
             return View(person);
         }
-
 
         public async Task<IActionResult> Edit(string id)
         {
