@@ -28,30 +28,40 @@ namespace BTPTPMQL.Controllers
             return RedirectToAction("Index");
         }
         public async Task<IActionResult> Edit(string id)
-{
-    var role = await _roleManager.FindByIdAsync(id);
-    if (role == null)
-    {
-        return NotFound();
-    }
-    return View(role);
-}
+        {
+            var role = await _roleManager.FindByIdAsync(id);
+            if (role == null)
+            {
+                return NotFound();
+            }
+            return View(role);
+        }
 
-[HttpPost]
-public async Task<IActionResult> Edit(string id, string newName)
-{
-    var role = await _roleManager.FindByIdAsync(id);
-    if (role == null)
-    {
-        return NotFound();
-    }
-
-    role.Name = newName;
-    await _roleManager.UpdateAsync(role);
-    return RedirectToAction("Index");
-}
         [HttpPost]
+        public async Task<IActionResult> Edit(string id, string newName)
+        {
+            var role = await _roleManager.FindByIdAsync(id);
+            if (role == null)
+            {
+                return NotFound();
+            }
+
+            role.Name = newName;
+            await _roleManager.UpdateAsync(role);
+            return RedirectToAction("Index");
+        }
         public async Task<IActionResult> Delete(string id)
+        {
+            var role = await _roleManager.FindByIdAsync(id);
+            if (role == null)
+            {
+                return NotFound();
+            }
+            return View(role);
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmation(string id)
         {
             var role = await _roleManager.FindByIdAsync(id);
             if (role == null)

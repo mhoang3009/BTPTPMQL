@@ -64,7 +64,7 @@ namespace BTPTPMQL.Controllers
                 }
 
                 var userRoles = await _userManager.GetRolesAsync(user);
-                foreach (var role in model.SelectedRoles ?? new List<string>())
+                foreach (var role in model.SelectedRoles)
                 {
                     if (!userRoles.Contains(role))
                     {
