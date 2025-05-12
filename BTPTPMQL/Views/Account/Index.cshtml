@@ -1,18 +1,33 @@
-@model IEnumerable<BTPTPMQL.Models.ApplicationUser>
+@using Microsoft.AspNetCore.Identity
+@using BTPTPMQL.Models.ViewModels
+@model IEnumerable<UserWithRoleVM>
 <table class="table">
     <thead>
         <tr>
-            <th>Full Name</th>
-            <th>Email</th>
+            <th>UserName</th>
+            <th>Roles</th>
+            <th>Action</th>
         </tr>
     </thead>
-    <body>
-        @foreach (var user in Model)
+    <tbody>
+        @foreach (var userWithRoles in Model)
         {
             <tr>
-                <td>@user.FullName</td>
-                <td>@user.Email</td>
+                <td>@userWithRoles.User.UserName</td>
+                <td>
+                    @if (userWithRoles.Roles != null)
+                    {
+                        foreach (var role in userWithRoles.Roles)
+                        {
+                            <span>@role,</span>
+                            <br/>
+                        }
+                    }
+                </td>
+                <td>
+                    <a asp-controller="Account" asp-action="AssignRole" asp-route-userId="@userWithRoles.User.Id">AssignRole </a>
+                </td>
             </tr>
         }
-    </body>
+    </tbody>
 </table>

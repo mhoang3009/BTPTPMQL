@@ -15,9 +15,11 @@ using System.Diagnostics;
 
 
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BTPTPMQL.Controllers
 {
+    [Authorize]
     public class PersonController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -62,7 +64,7 @@ namespace BTPTPMQL.Controllers
             return View(person);
         }
 
-        
+
         public IActionResult Create()
         {
             return View();
@@ -79,13 +81,13 @@ namespace BTPTPMQL.Controllers
             }
             return View(person);
         }
-        
-        
+
+
         public async Task<IActionResult> Edit(string id)
-        { 
-            if (id == null || _context.Person == null) 
-            { 
-                return NotFound(); 
+        {
+            if (id == null || _context.Person == null)
+            {
+                return NotFound();
             }
 
             var person = await _context.Person.FindAsync(id);
@@ -93,7 +95,7 @@ namespace BTPTPMQL.Controllers
             {
                 return NotFound();
             }
-            
+
             return View(person);
         }
         public async Task<IActionResult> Download()
@@ -114,12 +116,12 @@ namespace BTPTPMQL.Controllers
             stream.Position = 0;
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
         {
-            if (id !=person.PersonId)
+            if (id != person.PersonId)
             {
                 return NotFound();
             }
@@ -177,24 +179,24 @@ namespace BTPTPMQL.Controllers
             return RedirectToAction(nameof(Index));
 
         }
-        
+
         public async Task<IActionResult> Upload()
         {
-             var ps = await _context.Person.ToListAsync();
+            var ps = await _context.Person.ToListAsync();
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Upload(IFormFile file)
         {
-            if (file!= null)
+            if (file != null)
             {
                 string fileExtension = Path.GetExtension(file.FileName);
                 if (fileExtension != ".xls" && fileExtension != ".xlsx")
                 {
-                    ModelState.AddModelError("","Please choose an excel file to upload!");
+                    ModelState.AddModelError("", "Please choose an excel file to upload!");
                 }
-                else 
+                else
                 {
                     //remame file when upload to server
                     var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
@@ -209,7 +211,7 @@ namespace BTPTPMQL.Controllers
                         var dt = _excelProcess.ExcelToDataTable(filePath);
                         //using for loop to read data from dt
                         for (int i = 0; i < dt.Rows.Count; i++)
-{
+                        {
                             var person = new Person()
                             {
                                 PersonId = dt.Rows[i][0].ToString(),
