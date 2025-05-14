@@ -50,6 +50,12 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Account/AccessDenied";
     options.SlidingExpiration = true;
 });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Role", policy => policy.RequireClaim("Role", "Admin0ly"));
+    options.AddPolicy("Permission", policy => policy.RequireClaim("Role", "Employee0nly"));
+});
+
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 builder.Services.AddTransient<EmployeeSeeder>();
 builder.Services.ConfigureApplicationCookie(option =>

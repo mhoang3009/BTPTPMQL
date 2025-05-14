@@ -47,6 +47,24 @@ namespace BTPTPMQL.Controllers
             };
             return View(ViewModels);
         }
+        public async Task<IActionResult> AddClaim(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            var model = new UserClaimVM(userId, user.UserName, userClaims.ToList());
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddClaim(string userId, string claimType, string claimValue)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            var result = await _userManager.AddClaimAsync(user, new System.Security.Claims.Claim(claimType, claimValue));
+            if (result.Succeeded)
+            {
+                return RedirectToAction("AddClaim", new { userId });
+            }
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> AssignRole(AssignRoleVM model)
         {
