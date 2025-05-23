@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BTPTPMQL.Data;
 using BTPTPMQL.Models;
+using Microsoft.AspNetCore.Authorization;   
 
 namespace BTPTPMQL.Controllers
 {
+    [Authorize (Policy = "PolicyEmployee")]
     public class MemberUnitController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -26,6 +28,7 @@ namespace BTPTPMQL.Controllers
         }
 
         // GET: MemberUnit/Details/5
+        [Authorize (Policy = "PolicyAdmin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +47,7 @@ namespace BTPTPMQL.Controllers
         }
 
         // GET: MemberUnit/Create
+        [Authorize(Policy = "Role")]
         public IActionResult Create()
         {
             return View();

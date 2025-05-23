@@ -3,9 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BTPTPMQL.Models;
 using BTPTPMQL.Models.ViewModels;
+using System.Security.Claims;
+using BTPTPMQL.Models.Process;
+using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
 
 namespace BTPTPMQL.Controllers
 {
+    
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -36,8 +41,8 @@ namespace BTPTPMQL.Controllers
                 return NotFound();
             }
             var userRoles = await _userManager.GetRolesAsync(user);
-            var allRoles = _roleManager.Roles != null 
-                ? await _roleManager.Roles.Select(r => new RoleVM { Id = r.Id, Name = r.Name }).ToListAsync() 
+            var allRoles = _roleManager.Roles != null
+                ? await _roleManager.Roles.Select(r => new RoleVM { Id = r.Id, Name = r.Name }).ToListAsync()
                 : new List<RoleVM>();
             var ViewModels = new AssignRoleVM
             {
@@ -47,18 +52,29 @@ namespace BTPTPMQL.Controllers
             };
             return View(ViewModels);
         }
+
         public async Task<IActionResult> AddClaim(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
             var userClaims = await _userManager.GetClaimsAsync(user);
+
             var model = new UserClaimVM(userId, user.UserName, userClaims.ToList());
+
             return View(model);
         }
         [HttpPost]
         public async Task<IActionResult> AddClaim(string userId, string claimType, string claimValue)
         {
             var user = await _userManager.FindByIdAsync(userId);
-            var result = await _userManager.AddClaimAsync(user, new System.Security.Claims.Claim(claimType, claimValue));
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var result = await _userManager.AddClaimAsync(user, new Claim(claimType, claimValue));
             if (result.Succeeded)
             {
                 return RedirectToAction("AddClaim", new { userId });
@@ -82,17 +98,21 @@ namespace BTPTPMQL.Controllers
                 }
 
                 var userRoles = await _userManager.GetRolesAsync(user);
-                foreach (var role in model.SelectedRoles)
+
+                if (model.SelectedRoles != null)
                 {
-                    if (!userRoles.Contains(role))
+                    foreach (var role in model.SelectedRoles)
                     {
-                        await _userManager.AddToRoleAsync(user, role);
+                        if (!userRoles.Contains(role))
+                        {
+                            await _userManager.AddToRoleAsync(user, role);
+                        }
                     }
                 }
 
                 foreach (var role in userRoles)
                 {
-                    if (!model.SelectedRoles.Contains(role))
+                    if (model.SelectedRoles == null || !model.SelectedRoles.Contains(role))
                     {
                         await _userManager.RemoveFromRoleAsync(user, role);
                     }

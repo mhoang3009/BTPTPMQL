@@ -5,13 +5,19 @@
 <hr>
 <form asp-action="AssignRole" method="post">
     
-    @foreach (var role in Model.AllRoles)
+    
+
+    
+    @if (Model.AllRoles != null)
     {
-        <div>
-            <input class="checkbox" type="checkbox" id="@role.Id" name="SelectedRoles" value="@role.Name"
-                   @(Model.SelectedRoles != null && Model.SelectedRoles.Contains(role.Name) ? "checked" : "")>
-            <label for="@role.Id">@role.Name</label>
-        </div>
+        foreach (var role in Model.AllRoles)
+        {
+            <div>
+                <input class="checkbox" type="checkbox" id="@role.Id" name="SelectedRoles" value="@role.Name"
+                       @(Model.SelectedRoles != null && !string.IsNullOrEmpty(role.Name) && Model.SelectedRoles.Contains(role.Name) ? "checked" : "")>
+                <label for="@role.Id">@role.Name</label>
+            </div>
+        }
     }
 
     <input type="hidden" name="UserId" value="@Model.UserId">

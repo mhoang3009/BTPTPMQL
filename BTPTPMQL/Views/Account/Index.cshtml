@@ -7,13 +7,14 @@
             <th>UserName</th>
             <th>Roles</th>
             <th>Action</th>
+            <th>Phone Number</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var userWithRoles in Model)
         {
             <tr>
-                <td>@userWithRoles.User.UserName</td>
+                <td>@(userWithRoles.User != null ? userWithRoles.User.UserName : "N/A")</td>
                 <td>
                     @if (userWithRoles.Roles != null)
                     {
@@ -25,8 +26,15 @@
                     }
                 </td>
                 <td>
-                    <a asp-controller="Account" asp-action="AssignRole" asp-route-userId="@userWithRoles.User.Id">AssignRole </a>
-                    <a asp-controller="Account"asp-action="AddClaim" asp-route-userId="@userWithRoles.User.Id">Add Claim</a>
+                    @if (userWithRoles.User != null)
+                    {
+                        <a asp-controller="Account" asp-action="AssignRole" asp-route-userId="@userWithRoles.User.Id">AssignRole </a>
+                        <a asp-controller="Account" asp-action="AddClaim" asp-route-userId="@userWithRoles.User.Id">Add Claim</a>
+                    }
+                    else
+                    {
+                        <span>N/A</span>
+                    }
                 </td>
             </tr>
         }

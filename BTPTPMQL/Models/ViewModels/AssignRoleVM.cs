@@ -4,6 +4,8 @@ namespace BTPTPMQL.Models.ViewModels
     {
         public string? UserId { get; set; }
         public IList<string>? SelectedRoles { get; set; }
+         
+
         public IList<RoleVM>? AllRoles { get; set; }
     }
     public class RoleVM

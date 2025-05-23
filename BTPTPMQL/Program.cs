@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using BTPTPMQL.Models.Process;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Authorization;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -52,10 +53,13 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("Role", policy => policy.RequireClaim("Role", "Admin0ly"));
+    options.AddPolicy("Role", policy => policy.RequireClaim("Role", "Admin0nly"));
     options.AddPolicy("Permission", policy => policy.RequireClaim("Role", "Employee0nly"));
+    options.AddPolicy("PolicyAdmin", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("PolicyEmployee", policy => policy.RequireRole("Employee"));
+    options.AddPolicy("PolicyByPhoneNumber", policy => policy.Requirements.Add(new PolicyByPhoneNumberRequirement()));
 });
-
+builder.Services.AddSingleton<IAuthorizationHandler, PolicyByPhoneNumberHanle>();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 builder.Services.AddTransient<EmployeeSeeder>();
 builder.Services.ConfigureApplicationCookie(option =>
